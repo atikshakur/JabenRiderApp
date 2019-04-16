@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelectAccountTypeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="15dp"
+            android:text="SELECT YOUR ACCOUNT TYPE"
+            android:fontFamily="@font/source_sans_pro"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:background="#D01A1E"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:src="@drawable/pasenger_image"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:gravity="center"
+                android:text="Passenger Account"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create passenger account and enjoy our exclusive services."
+                android:fontFamily="@font/source_sans_pro"
+                android:textSize="13sp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_passenger_lets_go"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:background="@drawable/round_border_button"
+                android:text="Let's go"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:src="@drawable/driver_image"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Driver Account"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create driver account and enjoy our exclusive services."
+                android:fontFamily="@font/source_sans_pro"
+                android:textSize="13sp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_driver_lets_go"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:background="@drawable/round_border_button"
+                android:text="Let's go"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/source_sans_pro"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account??"
+                android:fontFamily="@font/source_sans_pro"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="Login"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

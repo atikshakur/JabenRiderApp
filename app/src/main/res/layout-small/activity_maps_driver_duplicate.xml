@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Driver.MapsActivityDriver" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch
+                android:layout_width="0dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_height="wrap_content"
+                android:id="@+id/location_switch_ON_OFF"
+                app:icon_release="@drawable/ic_location_off"
+                app:icon_press="@drawable/ic_location_on"
+                app:base_release_color="@color/browser_actions_text_color"
+                app:base_press_color="@color/md_yellow_50"
+                app:ball_release_color="@color/md_teal_100"
+                app:ball_press_color="@color/md_white_1000"/>
+        </LinearLayout>
+    </RelativeLayout>
+</fragment>

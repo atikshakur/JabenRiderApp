@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".DriverRegistrationActivity">
+
+        <TextView
+            android:id="@+id/txt_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Information"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:padding="2dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:background="#E7EDEE"/>
+
+        <TextView
+            android:id="@+id/txt_take_photo"
+            android:layout_below="@id/txt_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Take Your Photo"
+            android:textSize="10sp"
+            android:padding="3dp"/>
+
+        <ImageView
+            android:id="@+id/img_take_photo"
+            android:layout_below="@id/txt_take_photo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="30dp"
+            android:background="@drawable/photo_background_red"
+            android:src="@drawable/camera"/>
+
+        <LinearLayout
+            android:id="@+id/layout_reg1"
+            android:layout_below="@id/img_take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_margin="5dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name (Same as NID/License)*"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:textSize="10sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutAdress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/source_sans_pro"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/spinner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/txt_spinner"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginTop="10dp">
+
+                </Spinner>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayoutNIDNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edit_nid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/source_sans_pro"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/spinner_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/txt_spinner2"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginTop="10dp">
+
+                </Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:id="@+id/edit_date"
+                    android:padding="5dp"
+                    android:paddingRight="20dp"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:hint="Date of Birth*"
+                    android:inputType="date"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_car_information"
+            android:layout_below="@id/layout_reg1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Vehicle Information*"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:background="#E7EDEE"/>
+
+        <LinearLayout
+            android:id="@+id/layout_reg2"
+            android:layout_below="@id/txt_car_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <Spinner
+                android:id="@+id/txt_spinner3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:layout_marginTop="10dp">
+
+            </Spinner>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutLicense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_license"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Driving License*"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/source_sans_pro"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/txt_car_reg"
+            android:layout_below="@id/layout_reg2"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Vehicle Registration"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:background="#E7EDEE"/>
+
+        <LinearLayout
+            android:id="@+id/spinner_layout3"
+            android:layout_below="@id/txt_car_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/txt_spinner4"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginTop="10dp">
+
+                </Spinner>
+
+       <com.goodiebag.pinview.Pinview
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/pin_view"
+           app:pinWidth="10dp"
+           app:pinHeight="10dp"
+           app:pinLength="6"
+           app:cursorVisible="true"
+           app:forceKeyboard="true"
+           app:hint="0"
+           app:inputType="number"
+           app:password="false"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutFitness"
+                android:layout_below="@+id/spinner_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_fitness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fitness Certificate"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:textSize="10sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutTaxToken"
+                android:layout_below="@+id/inputLayoutFitness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_taxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tax Token"
+                    android:fontFamily="@font/source_sans_pro"
+                    android:textSize="10sp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/txt_referal"
+            android:layout_below="@id/spinner_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Referral Mobile Number"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/source_sans_pro_semibold"
+            android:background="#E7EDEE"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/inputLayoutRefrralCode"
+            android:layout_below="@+id/txt_referal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:id="@+id/edit_referrel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Referral Mobile Number"
+                android:fontFamily="@font/source_sans_pro"
+                android:textSize="10sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_TermsCondition"
+            android:layout_below="@id/inputLayoutRefrralCode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="by signing up you are agree to terms  and cndition."
+            android:textSize="10sp"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/source_sans_pro" />
+
+        <Button
+            android:id="@+id/btn_agreeSignup"
+            android:layout_below="@id/txt_TermsCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF130B"
+            android:text="Agree and Signup"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/source_sans_pro"
+            android:textAllCaps="true"/>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

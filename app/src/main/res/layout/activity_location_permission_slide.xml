@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LocationPermissionSlideActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/location_img">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_get_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select your location"
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="20sp"
+        android:textColor="#D01A1E"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Where do you want to take the rides?"
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="15sp"
+        android:textColor="#787878"
+        android:gravity="center"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search your location or select your "
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="15sp"
+        android:textColor="#787878"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="location from map. You can change the "
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="15sp"
+        android:textColor="#787878"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="location later at any time "
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="15sp"
+        android:textColor="#787878"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/btn_current_location"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:background="@drawable/button_round_red"
+        android:text="My Current location"
+        android:fontFamily="@font/source_sans_pro"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:fontFamily="@font/source_sans_pro"
+        android:textSize="15sp"
+        android:textColor="#787878"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/search_location"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:background="@drawable/button_round_offwhite"
+        android:text="Search Location"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:textAllCaps="false"
+        android:textColor="#D01A1E"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

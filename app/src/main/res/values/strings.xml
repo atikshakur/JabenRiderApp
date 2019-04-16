@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jaben</string>
+    <string name="log_with_phone_number">Login with phone number</string>
+    <string name="title_activity_maps_driver">Map</string>
+</resources>

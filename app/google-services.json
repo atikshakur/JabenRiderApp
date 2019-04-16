@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "764694111366",
+    "firebase_url": "https://jaben-657f1.firebaseio.com",
+    "project_id": "jaben-657f1",
+    "storage_bucket": "jaben-657f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764694111366:android:8359e496decf8571",
+        "android_client_info": {
+          "package_name": "com.techinnovationltd.jabenriderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764694111366-h9qrp1vg5mqe60vjhhooeenmhplcp09o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techinnovationltd.jabenriderapp",
+            "certificate_hash": "d9a51bfa27ea82ee69c1c4d01b3eb6601e5ee3ff"
+          }
+        },
+        {
+          "client_id": "764694111366-gbb3ggcafmbb5kekmdnpd3a2tf2jej66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techinnovationltd.jabenriderapp",
+            "certificate_hash": "7f0cf89545b9f0d6881c3d22603efdebae82785d"
+          }
+        },
+        {
+          "client_id": "764694111366-nh6522lci4rtrob2eduifdd8oavounl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0uOPtrO6cDYchDWASVKbv1h6DjkHR0ps"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764694111366-nh6522lci4rtrob2eduifdd8oavounl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
