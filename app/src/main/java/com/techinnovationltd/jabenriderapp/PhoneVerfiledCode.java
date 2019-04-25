@@ -156,43 +156,56 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
                         if (task.isSuccessful()) {
 
 
-                            firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-                            String userID=firebaseUser.getUid();
-
-                            reference= FirebaseDatabase.getInstance().getReference("Users").child(userID);
-
-                            HashMap<String,Object> hashMap=new HashMap<>();
-
-                            hashMap.put("id",userID);
-                            hashMap.put("Name","UserName");
-                            hashMap.put("Email","UserEmail");
-                            hashMap.put("Phone","UserPhone");
-                            hashMap.put("Birth_Date","Userbirth");
-                            hashMap.put("Password","Userpassword");
-                            hashMap.put("Service_Type","UserPassenger");
-                            hashMap.put("image_url","Defalut");
-
-
-                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if(task.isSuccessful()){
-
-                                        Intent intent = new Intent(PhoneVerfiledCode.this, VerifiedActivity.class);
+                            Intent intent = new Intent(PhoneVerfiledCode.this, VerifiedActivity.class);
                                         String phn=getIntent().getExtras().getString("phones");
                                         intent.putExtra("phones", phn);
                                         startActivity(intent);
                                         finish();
 
-                                    }
 
-                                    else {
-                                        Toast.makeText(getApplicationContext(),"Not Sucessfull",Toast.LENGTH_LONG).show();
-                                    }
 
-                                }
-                            });
+
+
+//
+//                            firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+//                            String userID=firebaseUser.getUid();
+//
+//                            reference= FirebaseDatabase.getInstance().getReference("Users").child(userID);
+//
+//                            HashMap<String,Object> hashMap=new HashMap<>();
+//
+//                            hashMap.put("id",userID);
+//                            hashMap.put("Name","UserName");
+//                            hashMap.put("Email","UserEmail");
+//                            hashMap.put("Phone","UserPhone");
+//                            hashMap.put("Birth_Date","Userbirth");
+//                            hashMap.put("Password","Userpassword");
+//                            hashMap.put("Service_Type","UserPassenger");
+//                            hashMap.put("image_url","Defalut");
+
+
+//                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//
+//                                    if(task.isSuccessful()){
+//
+//                                        Intent intent = new Intent(PhoneVerfiledCode.this, VerifiedActivity.class);
+//                                        String phn=getIntent().getExtras().getString("phones");
+//                                        intent.putExtra("phones", phn);
+//                                        startActivity(intent);
+//                                        finish();
+//
+//                                    }
+//
+//                                    else {
+//                                        Toast.makeText(getApplicationContext(),"Not Sucessfull",Toast.LENGTH_LONG).show();
+//                                    }
+//
+//                                }
+//                            });
+
+
 
                         } else {
 
