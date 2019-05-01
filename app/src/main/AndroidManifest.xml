@@ -52,8 +52,8 @@
         <activity android:name=".EnterPhoneForLogin" />
         <activity android:name=".LogInWithPhoneNumberActivity" />
         <activity android:name=".SelectAccountTypeActivity" />
-        <activity android:name=".PhoneVerfiledCode" />
-        <activity android:name=".Registration" />
+        <activity android:name=".passenger.signup.PhoneVerfiledCode" />
+        <activity android:name=".passenger.signup.Registration" />
         <activity android:name=".ProcessMain" />
         <activity android:name=".LocationPermissionSlideActivity" />
         <activity android:name=".VerifiedActivity" />
