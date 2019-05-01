@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.techinnovationltd.jabenriderapp.Driver.LogInWithPhoneNumberActivityDriver;
 import com.techinnovationltd.jabenriderapp.Driver.MapsActivityDriver;
-
+//---2---
 public class SelectAccountTypeActivity extends AppCompatActivity {
 
     private Button btn_passenger,btn_driver;

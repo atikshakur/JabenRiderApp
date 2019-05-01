@@ -23,19 +23,17 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
 
     TextView get_phone;
 
-    FirebaseUser firebaseUser,firebaseUserChecking;
-    DatabaseReference reference,referenceChecking;
-
+    FirebaseUser firebaseUser, firebaseUserChecking;
+    DatabaseReference reference, referenceChecking;
 
 
     @Override
     protected void onStart() {
 
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-
-        if (firebaseUser!= null) {
+        if (firebaseUser != null) {
 
             final String userID = firebaseUser.getUid();
 
@@ -57,14 +55,14 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
                         //For checking rider has already login or not
                         final String phone_check = "defalut";
 
-                        firebaseUserChecking= FirebaseAuth.getInstance().getCurrentUser();
-                        referenceChecking= FirebaseDatabase.getInstance().getReference("Riders");
+                        firebaseUserChecking = FirebaseAuth.getInstance().getCurrentUser();
+                        referenceChecking = FirebaseDatabase.getInstance().getReference("Riders");
 
                         referenceChecking.orderByChild("Name").equalTo(phone_check).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                if (dataSnapshot.getValue() != null){
+                                if (dataSnapshot.getValue() != null) {
 
 
                                     Intent intent = new Intent(Verified_DriverorRider_AlreadyHas.this, DriverRegistrationSelectCityActivity.class);
@@ -73,17 +71,14 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
                                     finish();
 
 
-
-                                }
-
-                                else {
+                                } else {
 
                                     //it means user already registered
                                     //Add code to show your prompt
                                     final String userID = firebaseUser.getUid();
 
-                                    final String binum1="NotGiven";
-                                    String null1="";
+                                    final String binum1 = "NotGiven";
+                                    String null1 = "";
 
                                     referenceChecking = FirebaseDatabase.getInstance().getReference("Riders").child(userID);
 
@@ -92,18 +87,17 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                            Rider rider=dataSnapshot.getValue(Rider.class);
-                                            String binum=rider.getStatus().toString().trim();
+                                            Rider rider = dataSnapshot.getValue(Rider.class);
+                                            String binum = rider.getStatus().toString().trim();
 
 
-                                            if (!binum.equals(binum1)){
+                                            if (!binum.equals(binum1)) {
 
-                                                startActivity(new Intent(getApplicationContext(),UnderConstruction.class));
+                                                startActivity(new Intent(getApplicationContext(), UnderConstruction.class));
                                                 finish();
 
-                                            }
-                                            else {
-                                                startActivity(new Intent(getApplicationContext(),BikasPayment.class));
+                                            } else {
+                                                startActivity(new Intent(getApplicationContext(), BikasPayment.class));
                                             }
 
                                         }
@@ -135,11 +129,7 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
             //If not then you process from begging
 
 
-
-        }
-
-        else
-        {
+        } else {
             startActivity(new Intent(Verified_DriverorRider_AlreadyHas.this, SelectAccountTypeActivity.class));
             finish();
 
@@ -149,24 +139,13 @@ public class Verified_DriverorRider_AlreadyHas extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verified);
 
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-
 
 
     }

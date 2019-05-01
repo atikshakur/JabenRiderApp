@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.techinnovationltd.jabenriderapp.passenger.signup.Registration;
+
 public class Splash_Screen extends AppCompatActivity {
 
     private Button btn_get;
@@ -23,20 +25,29 @@ public class Splash_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen);
 
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        btn_get = findViewById(R.id.btn_get_started);
+//        btn_get = findViewById(R.id.btn_get_started);
+//
+//        btn_get.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Splash_Screen.this, Verified_DriverorRider_AlreadyHas.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
-        btn_get.setOnClickListener(new View.OnClickListener() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
+            public void run() {
                 Intent intent = new Intent(Splash_Screen.this, Verified_DriverorRider_AlreadyHas.class);
+                //Intent intent = new Intent(Splash_Screen.this, Registration.class);
                 startActivity(intent);
-
             }
-        });
-
+        }, 1000);
 
     }
 }
