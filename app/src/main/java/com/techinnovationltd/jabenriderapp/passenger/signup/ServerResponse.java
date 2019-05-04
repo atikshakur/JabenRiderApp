@@ -1,4 +1,8 @@
-package com.techinnovationltd.jabenriderapp.retrofit;
+package com.techinnovationltd.jabenriderapp.passenger.signup;
+
+/*
+ * Server Response for signing up user
+ */
 
 public class ServerResponse {
 

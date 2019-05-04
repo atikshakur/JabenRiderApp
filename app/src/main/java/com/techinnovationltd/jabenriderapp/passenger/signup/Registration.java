@@ -3,35 +3,24 @@ package com.techinnovationltd.jabenriderapp.passenger.signup;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.techinnovationltd.jabenriderapp.ProcessMain;
 import com.techinnovationltd.jabenriderapp.R;
-import com.techinnovationltd.jabenriderapp.UnderConstruction;
 import com.techinnovationltd.jabenriderapp.retrofit.ApiInterface;
 import com.techinnovationltd.jabenriderapp.retrofit.ApiUtils;
-import com.techinnovationltd.jabenriderapp.retrofit.ServerResponse;
-
-import java.util.Calendar;
-import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -71,7 +60,6 @@ public class Registration extends AppCompatActivity {
         phone = getIntent().getExtras().getString("phones");
         edt_phone.setText(phone);
         String phone_check = edt_phone.getText().toString().trim();
-
 
 
 //        birth_date2.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +145,7 @@ public class Registration extends AppCompatActivity {
 
     }
 
-    private void passengerRegistration(PassengerModel passenger){
+    private void passengerRegistration(PassengerModel passenger) {
 
         Call<ServerResponse> call = apiInterface.registerPassenger(passenger);
 
@@ -167,19 +155,22 @@ public class Registration extends AppCompatActivity {
 
                 ServerResponse validity = response.body();
 
-                if (response.body() == null)
-                    Toast.makeText(Registration.this, "response null", Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: Success" + validity.getSuccess());
+                    Log.d(TAG, "onResponse: Message" + validity.getMessage());
 
-                if (response.isSuccessful()){
-                    Log.d(TAG, "onResponse: " + validity.getSuccess());
-                    startActivity(new Intent(Registration.this, ProcessMain.class));
-                    finish();
+                    if (validity.getSuccess().equals("1")) {
+                        startActivity(new Intent(Registration.this, ProcessMain.class));
+                        finish();
+                    } else if (validity.getSuccess().equals("0")) {
+                        Toast.makeText(Registration.this, validity.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<ServerResponse> call, Throwable t) {
-                Log.d(TAG, "onFailure: "+ t.getMessage());
+                Log.d(TAG, "onFailure: " + t.getMessage());
                 Toast.makeText(Registration.this, "Registration failed", Toast.LENGTH_SHORT).show();
             }
         });

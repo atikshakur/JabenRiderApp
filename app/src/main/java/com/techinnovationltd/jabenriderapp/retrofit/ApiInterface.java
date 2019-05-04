@@ -1,6 +1,7 @@
 package com.techinnovationltd.jabenriderapp.retrofit;
 
 import com.techinnovationltd.jabenriderapp.passenger.signup.PassengerModel;
+import com.techinnovationltd.jabenriderapp.passenger.signup.ServerResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
