@@ -36,11 +36,12 @@ class SelectAccountTypeActivity : AppCompatActivity() {
         actionBar!!.hide()
 
         btn_passenger_lets_go.setOnClickListener {
-            val intent = Intent(this@SelectAccountTypeActivity, LogInWithPhoneNumberActivity::class.java)
+            val intent = Intent(this, LogInWithPhoneNumberActivity::class.java)
             startActivity(intent)
         }
 
-        btn_driver_lets_go.setOnClickListener { startActivity(Intent(this@SelectAccountTypeActivity, LogInWithPhoneNumberActivityDriver::class.java)) }
-
+        btn_driver_lets_go.setOnClickListener {
+            startActivity(Intent(this, LogInWithPhoneNumberActivityDriver::class.java))
+        }
     }
 }

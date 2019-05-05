@@ -147,13 +147,13 @@ public class Registration extends AppCompatActivity {
 
     private void passengerRegistration(PassengerModel passenger) {
 
-        Call<ServerResponse> call = apiInterface.registerPassenger(passenger);
+        Call<ServerResponseSignup> call = apiInterface.registerPassenger(passenger);
 
-        call.enqueue(new Callback<ServerResponse>() {
+        call.enqueue(new Callback<ServerResponseSignup>() {
             @Override
-            public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
+            public void onResponse(Call<ServerResponseSignup> call, Response<ServerResponseSignup> response) {
 
-                ServerResponse validity = response.body();
+                ServerResponseSignup validity = response.body();
 
                 if (response.isSuccessful()) {
                     Log.d(TAG, "onResponse: Success" + validity.getSuccess());
@@ -169,7 +169,7 @@ public class Registration extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ServerResponse> call, Throwable t) {
+            public void onFailure(Call<ServerResponseSignup> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.getMessage());
                 Toast.makeText(Registration.this, "Registration failed", Toast.LENGTH_SHORT).show();
             }

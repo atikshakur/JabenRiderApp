@@ -48,8 +48,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LogIN" />
-        <activity android:name=".EnterPhoneForLogin" />
+        <activity android:name=".passenger.login.LogIN" />
+        <activity android:name=".passenger.signup.EnterPhoneForLogin" />
         <activity android:name=".LogInWithPhoneNumberActivity" />
         <activity android:name=".SelectAccountTypeActivity" />
         <activity android:name=".passenger.signup.PhoneVerfiledCode" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogIN"
+    tools:context=".passenger.login.LogIN"
     android:background="@color/md_amber_50">
 
 
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:fontFamily="serif"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -31,11 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/login_phone"
-            android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
             android:drawablePadding="15dp"
-            android:hint="Phone"
+            android:hint="@string/phone"
             android:padding="10dp"
             android:textColorHint="@color/md_blue_grey_700"
             android:layout_marginBottom="10dp"
@@ -45,7 +44,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginpassword"
+            android:id="@+id/login_password"
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"

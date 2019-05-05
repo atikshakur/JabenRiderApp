@@ -1,4 +1,4 @@
-package com.techinnovationltd.jabenriderapp;
+package com.techinnovationltd.jabenriderapp.passenger.signup;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.techinnovationltd.jabenriderapp.passenger.signup.PhoneVerfiledCode;
+import com.techinnovationltd.jabenriderapp.R;
 
 public class EnterPhoneForLogin extends AppCompatActivity  {
 
@@ -43,9 +43,6 @@ public class EnterPhoneForLogin extends AppCompatActivity  {
         phonelayoutBar = findViewById(R.id.phoneProgress);
         wrongMessage=findViewById(R.id.txt_wrong);
         splashLog=findViewById(R.id.phoneProgress);
-
-
-
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +85,7 @@ public class EnterPhoneForLogin extends AppCompatActivity  {
                                 splashLog.setProgress(progress);
                                 if (progress==splashLog.getMax()){
 
-                                    String phones = "+880" + phoneNumber.getText().toString();
+                                    String phones = "880" + phoneNumber.getText().toString();
 
                                     Intent intent = new Intent(EnterPhoneForLogin.this, PhoneVerfiledCode.class);
                                     intent.putExtra("phones", phones);

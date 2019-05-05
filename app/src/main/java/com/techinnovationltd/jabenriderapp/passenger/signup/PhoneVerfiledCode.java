@@ -98,7 +98,7 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
 
         Toast.makeText(getApplicationContext(), "Sent Code", Toast.LENGTH_LONG).show();
 
-        String phn = getIntent().getExtras().getString("phones");
+        String phn = "+" + getIntent().getExtras().getString("phones");
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phn,        // Phone number to verify
@@ -147,8 +147,8 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
 
                         if (task.isSuccessful()) {
 
-                            Intent intent = new Intent(PhoneVerfiledCode.this, VerifiedActivity.class);
-                            String phn = getIntent().getExtras().getString("phones");
+                            Intent intent = new Intent(PhoneVerfiledCode.this, Registration.class);
+                            String phn = "+" + getIntent().getExtras().getString("phones");
                             intent.putExtra("phones", phn);
                             startActivity(intent);
                             finish();
