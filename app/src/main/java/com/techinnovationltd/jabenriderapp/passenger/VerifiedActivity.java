@@ -25,6 +25,7 @@ public class VerifiedActivity extends AppCompatActivity {
     TextView get_phone;
 
     FirebaseUser firebaseUser, firebaseUserChecking;
+    private String phone;
     DatabaseReference reference, referenceChecking;
 
     private ApiInterface apiInterface;
@@ -40,7 +41,7 @@ public class VerifiedActivity extends AppCompatActivity {
         get_phone = findViewById(R.id.txt_get_phone);
 
 
-        String phone = getIntent().getExtras().getString("phones");
+        phone = getIntent().getExtras().getString("phones");
         get_phone.setText(phone);
         final String phone_check = get_phone.getText().toString().trim();
 
@@ -86,6 +87,7 @@ public class VerifiedActivity extends AppCompatActivity {
                     finish();
                 } else if(res.getSuccess().equals("0")){
                     Intent intent = new Intent(VerifiedActivity.this, Registration.class);
+                    intent.putExtra("phone", phone);
                     startActivity(intent);
                     finish();
                 }

@@ -57,7 +57,7 @@ public class Registration extends AppCompatActivity {
 
         //firebaseUserChecking= FirebaseAuth.getInstance().getCurrentUser();
         // referenceChecking=FirebaseDatabase.getInstance().getReference("Users").child(firebaseUserChecking.getUid());
-        phone = getIntent().getExtras().getString("phones");
+        phone = getIntent().getExtras().getString("phone");
         edt_phone.setText(phone);
         String phone_check = edt_phone.getText().toString().trim();
 
