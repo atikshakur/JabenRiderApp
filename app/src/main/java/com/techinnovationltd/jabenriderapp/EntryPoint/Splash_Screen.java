@@ -40,6 +40,7 @@ public class Splash_Screen extends AppCompatActivity {
                 Intent intent = new Intent(Splash_Screen.this, Verified_DriverorRider_AlreadyHas.class);
                 //Intent intent = new Intent(Splash_Screen.this, Registration.class);
                 startActivity(intent);
+                finish();
             }
         }, 1000);
 
