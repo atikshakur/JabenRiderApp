@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.techinnovationltd.jabenriderapp.passenger.login.LogIN
+import com.techinnovationltd.jabenriderapp.passenger.signup.EnterPhoneForLogin
 
 class Verified_DriverorRider_AlreadyHas : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class Verified_DriverorRider_AlreadyHas : AppCompatActivity() {
             finish()
 
         } else {
-            startActivity(Intent(this, LogIN::class.java))
+            startActivity(Intent(this, EnterPhoneForLogin::class.java))
             finish()
         }
 

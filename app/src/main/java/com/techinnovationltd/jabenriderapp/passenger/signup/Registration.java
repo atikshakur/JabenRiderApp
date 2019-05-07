@@ -112,7 +112,7 @@ public class Registration extends AppCompatActivity {
                 email = edt_email.getText().toString();
                 device_id = "null";
                 PassengerModel passenger = new PassengerModel(name, password, nid, phone, email, device_id);
-                //PassengerModel passenger = new PassengerModel("name", "password", "nid", "phone", "email", "device_id");
+                //Passenger passenger = new Passenger("name", "password", "nid", "phone", "email", "device_id");
 
                 if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password)) {
                     Toast.makeText(Registration.this, "Input All Information", Toast.LENGTH_LONG).show();
