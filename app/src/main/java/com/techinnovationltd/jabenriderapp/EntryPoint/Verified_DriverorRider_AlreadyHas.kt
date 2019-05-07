@@ -1,4 +1,4 @@
-package com.techinnovationltd.jabenriderapp
+package com.techinnovationltd.jabenriderapp.EntryPoint
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
-import com.techinnovationltd.jabenriderapp.passenger.login.LogIN
+import com.techinnovationltd.jabenriderapp.R
 import com.techinnovationltd.jabenriderapp.passenger.signup.EnterPhoneForLogin
 
 class Verified_DriverorRider_AlreadyHas : AppCompatActivity() {

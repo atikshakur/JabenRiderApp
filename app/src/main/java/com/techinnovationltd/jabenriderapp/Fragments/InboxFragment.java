@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.techinnovationltd.jabenriderapp.ProcessMain;
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain;
 import com.techinnovationltd.jabenriderapp.R;
 
 

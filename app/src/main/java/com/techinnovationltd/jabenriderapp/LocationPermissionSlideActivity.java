@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain;
+
 public class LocationPermissionSlideActivity extends AppCompatActivity {
 
     private Button btnMy_Location;
@@ -24,7 +26,7 @@ public class LocationPermissionSlideActivity extends AppCompatActivity {
         btnMy_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LocationPermissionSlideActivity.this,ProcessMain.class);
+                Intent intent = new Intent(LocationPermissionSlideActivity.this, ProcessMain.class);
                 startActivity(intent);
             }
         });

@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.techinnovationltd.jabenriderapp.ProcessMain;
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain;
 import com.techinnovationltd.jabenriderapp.R;
 import com.techinnovationltd.jabenriderapp.retrofit.ApiInterface;
 import com.techinnovationltd.jabenriderapp.retrofit.ApiUtils;
