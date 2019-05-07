@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
-import com.techinnovationltd.jabenriderapp.ProcessMain
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain
 import com.techinnovationltd.jabenriderapp.passenger.signup.EnterPhoneForLogin
 import com.techinnovationltd.jabenriderapp.R
 import com.techinnovationltd.jabenriderapp.retrofit.ApiInterface

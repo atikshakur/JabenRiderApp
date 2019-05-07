@@ -1,20 +1,15 @@
-package com.techinnovationltd.jabenriderapp;
+package com.techinnovationltd.jabenriderapp.passenger;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain;
+import com.techinnovationltd.jabenriderapp.R;
 import com.techinnovationltd.jabenriderapp.passenger.login.Passenger;
 import com.techinnovationltd.jabenriderapp.passenger.login.ServerResponseLogin;
 import com.techinnovationltd.jabenriderapp.passenger.signup.Registration;

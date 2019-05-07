@@ -41,7 +41,7 @@
             android:name=".Driver.MapsActivityDriver"
             android:label="@string/title_activity_maps_driver" />
         <activity android:name=".MainScreen" />
-        <activity android:name=".Splash_Screen">
+        <activity android:name=".EntryPoint.Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,9 +54,9 @@
         <activity android:name=".SelectAccountTypeActivity" />
         <activity android:name=".passenger.signup.PhoneVerfiledCode" />
         <activity android:name=".passenger.signup.Registration" />
-        <activity android:name=".ProcessMain" />
+        <activity android:name=".EntryPoint.ProcessMain" />
         <activity android:name=".LocationPermissionSlideActivity" />
-        <activity android:name=".VerifiedActivity" />
+        <activity android:name=".passenger.VerifiedActivity" />
         <activity android:name=".Driver.MainDriverHomeActivity" />
         <activity android:name=".Driver.DriverRegistrationActivity" />
         <activity android:name=".Driver.DriverRegistrationSelectCityActivity" />
@@ -65,7 +65,7 @@
         <activity android:name=".Driver.VerifiedActivityDriver" />
         <activity android:name=".Driver.DriverRegistrationSelectVehicleActivity" />
         <activity android:name=".Driver.PhoneVerfiledCodeDriver" />
-        <activity android:name=".Verified_DriverorRider_AlreadyHas" />
+        <activity android:name=".EntryPoint.Verified_DriverorRider_AlreadyHas" />
     </application>
 
 </manifest>
