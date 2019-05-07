@@ -48,7 +48,6 @@ class LogIN : AppCompatActivity() {
 
             override fun onResponse(call: Call<ServerResponseLogin>, response: Response<ServerResponseLogin>) {
                 var validity = response.body()
-                Toast.makeText(this@LogIN, "blah", Toast.LENGTH_LONG).show()
 
                 if (response.isSuccessful) {
                     Log.d("Login", validity?.message)

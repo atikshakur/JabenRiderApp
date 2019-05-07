@@ -22,10 +22,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
+import com.techinnovationltd.jabenriderapp.ProcessMain;
 import com.techinnovationltd.jabenriderapp.R;
 import com.techinnovationltd.jabenriderapp.VerifiedActivity;
+import com.techinnovationltd.jabenriderapp.passenger.login.Passenger;
+import com.techinnovationltd.jabenriderapp.passenger.login.ServerResponseLogin;
+import com.techinnovationltd.jabenriderapp.retrofit.ApiInterface;
+import com.techinnovationltd.jabenriderapp.retrofit.ApiUtils;
 
 import java.util.concurrent.TimeUnit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,9 +45,9 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
     private FirebaseAuth mAuth;
     FirebaseUser firebaseUser, firebaseUserChecking;
     DatabaseReference reference, referenceChecking;
-
-
     String codeSent;
+
+    private ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +66,8 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
         sendVerificationCode();
 
         continueProcess.setOnClickListener(this);
+
+        apiInterface = ApiUtils.getApiService();
 
 
     }
@@ -145,14 +156,15 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
+                        String phone = getIntent().getExtras().getString("phones");
+
                         if (task.isSuccessful()) {
 
-                            Intent intent = new Intent(PhoneVerfiledCode.this, Registration.class);
-                            String phn = "+" + getIntent().getExtras().getString("phones");
+                            Intent intent = new Intent(PhoneVerfiledCode.this, VerifiedActivity.class);
+                            String phn = getIntent().getExtras().getString("phones");
                             intent.putExtra("phones", phn);
                             startActivity(intent);
                             finish();
-
 //
 //                            firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
 //                            String userID=firebaseUser.getUid();
@@ -201,4 +213,8 @@ public class PhoneVerfiledCode extends AppCompatActivity implements View.OnClick
                     }
                 });
     }
+
+
+
+
 }
