@@ -90,6 +90,7 @@ public class EnterPhoneForLogin extends AppCompatActivity  {
                                     Intent intent = new Intent(EnterPhoneForLogin.this, PhoneVerfiledCode.class);
                                     intent.putExtra("phones", phones);
                                     startActivity(intent);
+                                    finish();
                                 }
                             }
                         });

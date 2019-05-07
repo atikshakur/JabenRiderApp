@@ -108,10 +108,9 @@ public class Registration extends AppCompatActivity {
 
                 name = edt_name.getText().toString();
                 password = edt_password.getText().toString();
-                nid = "null";
                 email = edt_email.getText().toString();
                 device_id = "null";
-                PassengerModel passenger = new PassengerModel(name, password, nid, phone, email, device_id);
+                PassengerModel passenger = new PassengerModel(name, password, phone, email, device_id);
                 //Passenger passenger = new Passenger("name", "password", "nid", "phone", "email", "device_id");
 
                 if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password)) {
