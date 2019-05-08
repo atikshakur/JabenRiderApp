@@ -25,7 +25,7 @@ import android.widget.ToggleButton;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
-import com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -72,7 +72,7 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
 
 
     Marker mCurrent;
-    MaterialAnimatedSwitch materialAnimatedSwitch;
+//    MaterialAnimatedSwitch materialAnimatedSwitch;
     SupportMapFragment mapFragment;
 
     @Override
@@ -85,35 +85,35 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
         mapFragment.getMapAsync(this);
 
 
-
-        materialAnimatedSwitch=findViewById(R.id.location_switch_ON_OFF);
-
-        materialAnimatedSwitch.setOnCheckedChangeListener(new MaterialAnimatedSwitch.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(boolean isOnline) {
-
-                if (isOnline){
-                    startLocaionUpdated();
-                    displayLocation();
-                    Snackbar.make(mapFragment.getView(),"You are Online",Snackbar.LENGTH_LONG).show();
-
-                }
-
-                else {
-                    stopLocationUpdate();
-                    mCurrent.remove();
-                    Snackbar.make(mapFragment.getView(),"You are Offline",Snackbar.LENGTH_LONG).show();
-                }
-
-            }
-        });
+//
+//        materialAnimatedSwitch=findViewById(R.id.location_switch_ON_OFF);
+//
+//        materialAnimatedSwitch.setOnCheckedChangeListener(new MaterialAnimatedSwitch.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(boolean isOnline) {
+//
+//                if (isOnline){
+//                    startLocaionUpdated();
+//                    displayLocation();
+//                    Snackbar.make(mapFragment.getView(),"You are Online",Snackbar.LENGTH_LONG).show();
+//
+//                }
+//
+//                else {
+//                    stopLocationUpdate();
+//                    mCurrent.remove();
+//                    Snackbar.make(mapFragment.getView(),"You are Offline",Snackbar.LENGTH_LONG).show();
+//                }
+//
+//            }
+//        });
 
 
         //Geo Fire
         databaseReference= FirebaseDatabase.getInstance().getReference("Drivers");
         geoFire= new GeoFire(databaseReference);
 
-        setUpLocation();
+//        setUpLocation();
 
 
 
@@ -134,56 +134,56 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
         LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,  this);
     }
 
-    private void displayLocation() {
-
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-
-        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-
-        if (mLastLocation != null) {
-
-             if (materialAnimatedSwitch.isChecked()){
-
-
-
-                final double latituse = mLastLocation.getLatitude();
-                final double longitiude = mLastLocation.getLongitude();
-
-
-                //Updated to firebase
-
-                geoFire.setLocation(FirebaseAuth.getInstance().getCurrentUser().getUid(), new GeoLocation(latituse, longitiude), new GeoFire.CompletionListener() {
-                    @Override
-                    public void onComplete(String key, DatabaseError error) {
-                        //Add maker
-                        if (mCurrent != null) {
-
-                            mCurrent.remove();
-
-                            mCurrent = mMap.addMarker(new MarkerOptions().icon
-                                    (BitmapDescriptorFactory.fromResource(R.drawable.car))
-                                    .position(new LatLng(latituse, longitiude))
-                                    .title("You"));
-
-
-                            //Move camera to this position
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latituse, longitiude), 15.0f));
-
-                            //draw animated rotate maker
-                            rotateMarker(mCurrent, -360, mMap);
-
-                        }
-                    }
-                });
-            } else {
-                Log.d("Error", "Cannot get your Location");
-            }
-        }
-    }
+//    private void displayLocation() {
+//
+//
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            return;
+//        }
+//
+//        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+//
+//        if (mLastLocation != null) {
+//
+//             if (materialAnimatedSwitch.isChecked()){
+//
+//
+//
+//                final double latituse = mLastLocation.getLatitude();
+//                final double longitiude = mLastLocation.getLongitude();
+//
+//
+//                //Updated to firebase
+//
+//                geoFire.setLocation(FirebaseAuth.getInstance().getCurrentUser().getUid(), new GeoLocation(latituse, longitiude), new GeoFire.CompletionListener() {
+//                    @Override
+//                    public void onComplete(String key, DatabaseError error) {
+//                        //Add maker
+//                        if (mCurrent != null) {
+//
+//                            mCurrent.remove();
+//
+//                            mCurrent = mMap.addMarker(new MarkerOptions().icon
+//                                    (BitmapDescriptorFactory.fromResource(R.drawable.car))
+//                                    .position(new LatLng(latituse, longitiude))
+//                                    .title("You"));
+//
+//
+//                            //Move camera to this position
+//                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latituse, longitiude), 15.0f));
+//
+//                            //draw animated rotate maker
+//                            rotateMarker(mCurrent, -360, mMap);
+//
+//                        }
+//                    }
+//                });
+//            } else {
+//                Log.d("Error", "Cannot get your Location");
+//            }
+//        }
+//    }
 
 
     private void rotateMarker(final Marker mCurrent, final float i, GoogleMap mMap) {
@@ -251,41 +251,41 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
     }
 
 
-    private void setUpLocation() {
-
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION )!= PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION )!= PackageManager.PERMISSION_GRANTED )
-        {
-            //Request Runtime permission
-
-            ActivityCompat.requestPermissions(this,new String[]{
-
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-            },My_permission_request_code);
-
-        }
-
-        else
-        {
-            if(checkPlayServices())
-            {
-                buildGoogleApiClients();
-                createLocationRequest();
-
-                if (materialAnimatedSwitch.isChecked()){
-
-
-                    displayLocation();
-}
-
-
-            }
-        }
-
-    }
-
+//    private void setUpLocation() {
+//
+//
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION )!= PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION )!= PackageManager.PERMISSION_GRANTED )
+//        {
+//            //Request Runtime permission
+//
+//            ActivityCompat.requestPermissions(this,new String[]{
+//
+//                    Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.ACCESS_FINE_LOCATION
+//            },My_permission_request_code);
+//
+//        }
+//
+//        else
+//        {
+//            if(checkPlayServices())
+//            {
+//                buildGoogleApiClients();
+//                createLocationRequest();
+//
+//                if (materialAnimatedSwitch.isChecked()){
+//
+//
+//                    displayLocation();
+//}
+//
+//
+//            }
+//        }
+//
+//    }
+//
 
 
     private void createLocationRequest() {
@@ -321,32 +321,32 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
 
     //For overrride the permission
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        switch (requestCode){
-            case My_permission_request_code:
-                if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-
-
-                    if(checkPlayServices())
-                    {
-                        buildGoogleApiClients();
-                        createLocationRequest();
-
-                        if (materialAnimatedSwitch.isChecked()){
-
-
-                            displayLocation();}
-
-
-
-                    }
-
-
-                }
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//
+//        switch (requestCode){
+//            case My_permission_request_code:
+//                if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+//
+//
+//                    if(checkPlayServices())
+//                    {
+//                        buildGoogleApiClients();
+//                        createLocationRequest();
+//
+//                        if (materialAnimatedSwitch.isChecked()){
+//
+//
+//                            displayLocation();}
+//
+//
+//
+//                    }
+//
+//
+//                }
+//        }
+//    }
 
 
 
@@ -365,7 +365,7 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
-        displayLocation();
+//        displayLocation();
         startLocaionUpdated();
 
     }
@@ -386,7 +386,7 @@ public class MapsActivityDriver extends FragmentActivity implements OnMapReadyCa
     public void onLocationChanged(Location location) {
 
         mLastLocation=location;
-        displayLocation();
+//        displayLocation();
 
     }
 }
