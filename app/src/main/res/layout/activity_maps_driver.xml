@@ -19,12 +19,12 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch
-                android:layout_width="0dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:layout_height="wrap_content"
-                android:id="@+id/location_switch_ON_OFF" />
+            <!--<com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch-->
+                <!--android:layout_width="0dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/location_switch_ON_OFF" />-->
         </LinearLayout>
     </RelativeLayout>
 
