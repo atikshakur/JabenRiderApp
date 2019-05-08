@@ -1,4 +1,4 @@
-package com.techinnovationltd.jabenriderapp;
+package com.techinnovationltd.jabenriderapp.EntryPoint;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import com.techinnovationltd.jabenriderapp.Fragments.HistoryFragment;
 import com.techinnovationltd.jabenriderapp.Fragments.HomeFragment;
 import com.techinnovationltd.jabenriderapp.Fragments.InboxFragment;
 import com.techinnovationltd.jabenriderapp.Fragments.MoreFragment;
+import com.techinnovationltd.jabenriderapp.R;
 
 public class ProcessMain extends AppCompatActivity {
 

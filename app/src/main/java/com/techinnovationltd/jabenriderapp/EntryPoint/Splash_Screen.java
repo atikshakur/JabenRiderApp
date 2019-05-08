@@ -1,19 +1,13 @@
-package com.techinnovationltd.jabenriderapp;
+package com.techinnovationltd.jabenriderapp.EntryPoint;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 
-import com.techinnovationltd.jabenriderapp.passenger.signup.Registration;
+import com.techinnovationltd.jabenriderapp.R;
 
 public class Splash_Screen extends AppCompatActivity {
 
@@ -46,6 +40,7 @@ public class Splash_Screen extends AppCompatActivity {
                 Intent intent = new Intent(Splash_Screen.this, Verified_DriverorRider_AlreadyHas.class);
                 //Intent intent = new Intent(Splash_Screen.this, Registration.class);
                 startActivity(intent);
+                finish();
             }
         }, 1000);
 

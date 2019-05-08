@@ -38,10 +38,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.techinnovationltd.jabenriderapp.Driver.DriverRegistrationActivity;
-import com.techinnovationltd.jabenriderapp.MainScreen;
 import com.techinnovationltd.jabenriderapp.Model.User;
-import com.techinnovationltd.jabenriderapp.ProcessMain;
+import com.techinnovationltd.jabenriderapp.EntryPoint.ProcessMain;
 import com.techinnovationltd.jabenriderapp.R;
 import com.techinnovationltd.jabenriderapp.SelectAccountTypeActivity;
 
@@ -50,7 +48,6 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.Activity.RESULT_OK;
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 
 /**
